@@ -37,18 +37,32 @@ public class empresa {
 	}
 
 	public void añadirBus() {
-		this.buses.add(new bus("Celerio",2016, 5000000, 40000.4));
-		this.buses.add(new bus("Celerio",2015, 5000000, 40000.4));
-		this.buses.add(new bus("Celerio",2018, 5000000, 40000.4));
-		this.buses.add(new bus("Celerio",2020, 5000000, 40000.4));
-		this.buses.add(new bus("Celerio",2020, 5000000, 40000.4));
-		this.buses.add(new bus("Celerio",2021, 5000000, 40000.4));
-		this.buses.add(new bus("Celerio",2021, 5000000, 40000.4));
-		this.buses.add(new bus("Celerio",2016, 5000000, 40000.4));
-		this.buses.add(new bus("Celerio",2016, 5000000, 40000.4));
-		this.buses.add(new bus("Celerio",2013, 5000000, 40000.4));
-		this.buses.add(new bus("Celerio",2015, 5000000, 40000.4));
+		this.buses.add(new bus("Mercedes-Benz",2016, 5000000, 40000.4));
+		this.buses.add(new bus("Mercedes-Benz",2015, 5000000, 40000.4));
+		this.buses.add(new bus("Mercedes-Benz",2018, 5000000, 40000.4));
+		this.buses.add(new bus("Mercedes-Benz",2020, 5000000, 40000.4));
+		this.buses.add(new bus("Mercedes-Benz",2020, 5000000, 40000.4));
+		this.buses.add(new bus("Mercedes-Benz",2021, 5000000, 40000.4));
+		this.buses.add(new bus("Mercedes-Benz",2021, 5000000, 40000.4));
+		this.buses.add(new bus("Mercedes-Benz",2016, 5000000, 40000.4));
+		this.buses.add(new bus("Mercedes-Benz",2016, 5000000, 40000.4));
+		this.buses.add(new bus("Mercedes-Benz",2013, 5000000, 40000.4));
+		this.buses.add(new bus("Mercedes-Benz",2015, 5000000, 40000.4));
+		this.buses.add(new bus("Mercedes-Benz",2015, 5000000, 40000.4));
+		this.buses.add(new bus("Mercedes-Benz",2015, 5000000, 40000.4));
 
 	}
+
+	public void añadirBus(String nombre, int año) throws BusNoEcontradoException {
+		for (bus bus : this.buses) {
+			if (bus.getNombre().equals(nombre) && bus.getAño() == año) {
+				this.buses.remove(bus);
+				return;
+			}
+		}
+
+		throw new BusNoEcontradoException();
+	}
+
 
 }
